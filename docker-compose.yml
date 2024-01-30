@@ -3,6 +3,8 @@ services:
   chatbot:
     build:
       context: .
+    volumes:
+      - ./:/app
     ports:
       - "8501:8501"
     environment:
