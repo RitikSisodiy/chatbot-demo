@@ -4,13 +4,16 @@ FROM python:3.9-slim
 RUN apt-get update && \
     apt-get install -y build-essential cmake wget
 # Set the working directory in the container
+ENV MODEL_FILE mistral-7b-instruct-v0.1.Q4_K_M.gguf
+
+# Check if the model file already exists before downloading
+RUN if [ ! -f "$MODEL_FILE" ]; then \
+    wget -O "$MODEL_FILE" https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/$MODEL_FILE?download=true; \
+fi
 WORKDIR /app
 
 # Copy the local code to the container
 COPY . /app
-
-# Download the model file
-RUN wget -O mistral-7b-instruct-v0.1.Q4_K_M.gguf https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf?download=true
 
 
 RUN pip install -r requirements.txt  # Add any additional requirements if needed
