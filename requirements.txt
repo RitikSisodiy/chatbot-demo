@@ -9,3 +9,5 @@ pypdf==4.0.1
 sentence-transformers==2.3.0
 faiss-cpu==1.7.4
 llama_cpp_python==0.2.36
+whisper==1.1.10
+whispercpp @ git+https://github.com/johnryan465/whispercpp.py@439d49d16d010d33fd841db7b364985deee6889d
