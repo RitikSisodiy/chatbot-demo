@@ -7,7 +7,10 @@ WORKDIR /app
 # Copy the local code to the container
 COPY . /app
 
-# Install dependencies
+# Download the model file
+RUN wget -O mistral-7b-instruct-v0.1.Q4_K_M.gguf https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf?download=true
+
+
 RUN pip install -r requirements.txt  # Add any additional requirements if needed
 
 # Expose the port where Streamlit will run
