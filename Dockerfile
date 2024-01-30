@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy the local code to the container
 COPY . /app
 RUN apt-get update && \
-    apt-get install -y build-essential cmake wget
+    apt-get install -y build-essential cmake wget git
 
 
 
