@@ -4,3 +4,8 @@ audio-recorder-streamlit==0.0.8
 whisper==1.1.10 
 gTTS==2.5.1
 torch==2.1.2
+streamlit-chat==0.1.1
+pypdf==4.0.1
+sentence-transformers==2.3.0
+faiss-cpu==1.7.4
+llama_cpp_python==0.2.36

@@ -1,6 +1,8 @@
 # Use the official Streamlit base image
 FROM python:3.9-slim
-
+# Install build tools and dependencies
+RUN apt-get update && \
+    apt-get install -y build-essential cmake wget
 # Set the working directory in the container
 WORKDIR /app
 
