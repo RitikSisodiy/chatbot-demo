@@ -19,4 +19,4 @@ RUN pip install -r requirements.txt  # Add any additional requirements if needed
 EXPOSE 8501
 
 # Command to run the application
-CMD ["streamlit", "run", "app.py"]  # Replace "app.py" with the actual name of your Python script
+CMD ["sh", "entry_point.sh"]
